@@ -10,8 +10,7 @@ services:
       PGUSER: 'docker'
       PGPASSWORD: '123456'
       PGHOST: 'db'
-      PGDATABASE: 'postgres'
-      PORT: '3000'
+      PGDATABASE: 'postgres'      
   db:
     container_name: dailycheckapp_database
     image: 'postgres'

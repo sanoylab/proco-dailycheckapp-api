@@ -5,12 +5,12 @@ services:
     container_name: dailycheckapp_backend_app
     build: .
     ports:
-      '3000:3000'
+      - '3000:3000' 
     environment:
       PGUSER: 'docker'
       PGPASSWORD: '123456'
       PGHOST: 'db'
-      PGDATABASE: 'postgres'      
+      PGDATABASE: 'postgres' 
   db:
     container_name: dailycheckapp_database
     image: 'postgres'

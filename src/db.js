@@ -1,15 +1,12 @@
 const knex = require('knex')
 
-require("dotenv").config();
-
 module.exports = knex({
-  client: 'postgres',
+  client: "postgres",
   connection: {
-    host: 'docker',
-    user: '123456',
-    password: 'db',
-    database: 'postgres',
+    host: "db",
+    user: "docker",
+    password: "123456",
+    database: "postgres",
   },
 })
-
 

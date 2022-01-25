@@ -31,6 +31,7 @@ const db = require('../db');
         table.string('admin_3_name')
         table.string('admin_4_name')
         table.string('admin_1_name')
+        table.string('giga_id')
       })
       console.log('School table created!')
 

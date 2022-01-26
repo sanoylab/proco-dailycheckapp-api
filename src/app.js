@@ -19,7 +19,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Project Connect Daily Check (PCDC) App Backend API",
+      title: "Project Connect Daily Check App (PCDC) Backend API",
       description: "This is a backend API for the Project Connect Daily Check App. PCDC is a window-based desktop application that sends internet connectivity information of schools to Project Connect on daily basis.",
       termsOfService: "https://projectconnect.unicef.org/privacy",
       contact: {

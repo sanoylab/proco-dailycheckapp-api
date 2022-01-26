@@ -75,6 +75,9 @@ const {
  *         admin_4_name:
  *           type: string
  *           description: admin_4_name
+ *         admin_1_name:
+ *           type: string
+ *           description: admin_4_name
  *         giga_id:
  *           type: string
  *           description: A unique giga_id
@@ -84,6 +87,16 @@ const {
  *         name: C.B.T.A. NUM. 36 EMILIANO ZAPA
  *         country_id: 146,
  *         country: Mexico
+ *         location_id:
+ *         address: 
+ *         email: 
+ *         postal_code: 
+ *         education_level: 
+ *         environment:  
+ *         admin_2_name: 
+ *         admin_3_name: 
+ *         admin_4_name: 
+ *         admin_1_name: 
  *         giga_id: 7b995921-6531-4eaf-a399-57491f5de640 *         
  */
 

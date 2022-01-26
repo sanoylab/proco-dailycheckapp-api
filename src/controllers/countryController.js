@@ -43,7 +43,7 @@ module.exports.getAll = async (req, res) => {
 
 module.exports.getById = async (req, res) => {
     try {
-      let query = `SELECT id, code, name FROM locations_country WHERE id=${req.params.id} order by name;`;
+      let query = `SELECT id, code, name,flag FROM locations_country WHERE id=${req.params.id} order by name;`;
   
       let result = null;
       try {

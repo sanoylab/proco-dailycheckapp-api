@@ -51,8 +51,16 @@ module.exports.getById = async (req, res) => {
       } catch (e) {
         console.log(e);
       }
+      const data = result.rows.map(country => {
+        return {
+            id: country.id,
+            code: country.code,
+            name: country.name,            
+             flag :`https://sauniconnectweb.blob.core.windows.net/uniconnectweb/${country.flag}` 
+        }        
+    });
       
-      res.status(200).json({success: true, data: result.rows})
+      res.status(200).json({success: true, data})
      
     } catch (e) {
       res.status(400).json({ success: false, message: err.message });

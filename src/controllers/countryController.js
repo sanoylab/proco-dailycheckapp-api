@@ -33,7 +33,7 @@ module.exports.getAll = async (req, res) => {
         }        
     });
     
-    res.status(200).json({success: true, data})
+    res.status(200).json({success: true, timestamp: new Date(),data})
    
   } catch (e) {
     res.status(400).json({ success: false, message: err.message });
@@ -56,11 +56,11 @@ module.exports.getById = async (req, res) => {
             id: country.id,
             code: country.code,
             name: country.name,            
-             flag :`https://sauniconnectweb.blob.core.windows.net/uniconnectweb/${country.flag}` 
+            flag :`https://sauniconnectweb.blob.core.windows.net/uniconnectweb/${country.flag}` 
         }        
     });
       
-      res.status(200).json({success: true, data})
+      res.status(200).json({success: true, timestamp: new Date(), data})
      
     } catch (e) {
       res.status(400).json({ success: false, message: err.message });

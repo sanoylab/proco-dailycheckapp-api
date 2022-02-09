@@ -18,7 +18,7 @@ module.exports.getAll = async (req, res) => {
       console.log(e);
     }    
 
-    res.status(200).json({success: true, data: result.rows})
+    res.status(200).json({success: true, timestamp: new Date(),data: result.rows})
    
   } catch (e) {
     res.status(400).json({ success: false, message: e.message });
@@ -40,7 +40,7 @@ module.exports.getBySchoolId = async (req, res) => {
         console.log(e);
       }    
 
-      res.status(200).json({success: true, data: result.rows})
+      res.status(200).json({success: true, timestamp: new Date(),data: result.rows})
      
     } catch (e) {
       res.status(400).json({ success: false, message: e.message });

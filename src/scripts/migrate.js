@@ -36,6 +36,22 @@ const db = require('../db');
       console.log('School table created!')
 
 
+      await db.schema.dropTableIfExists('dailycheckapp_school')
+      await db.schema.withSchema('public').createTable('dailycheckapp_school', (table) => {
+        table.increments()
+        table.string('school_id')
+        table.string('giga_id')
+        table.integer('country_id')
+        table.string('os')
+        table.string('ip_address')
+        table.string('mac_address')
+        table.date('created')
+        table.string('app_version')
+      })
+      console.log('Daily Check App School table created!')
+
+
+
 
       process.exit(0)
     } catch (err) {

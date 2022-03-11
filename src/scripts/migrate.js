@@ -16,7 +16,7 @@ const db = require('../db');
       await db.schema.withSchema('public').createTable('schools_school', (table) => {
         table.integer('id')
         table.string('external_id')
-        table.string('name')
+        table.string('name',3000)
         
         table.string('address')
         table.string('postal_code')
@@ -25,13 +25,13 @@ const db = require('../db');
         table.string('environment')
         table.string('school_type')
         table.integer('country_id')
-        table.string('country')
-        table.integer('location_id')
+      
+        table.string('location_id')
         table.string('admin_2_name')
         table.string('admin_3_name')
         table.string('admin_4_name')
         table.string('admin_1_name')
-        table.string('giga_id')
+        table.string('giga_id_school')
       })
       console.log('School table created!')
 
@@ -39,14 +39,12 @@ const db = require('../db');
       await db.schema.dropTableIfExists('dailycheckapp_school')
       await db.schema.withSchema('public').createTable('dailycheckapp_school', (table) => {
         table.increments()
-        table.string('school_id')
-        table.string('giga_id')
-        table.integer('country_id')
-        table.string('os')
-        table.string('ip_address')
+        table.string('user_id')
+        table.string('giga_id_school')     
         table.string('mac_address')
-        table.date('created')
+        table.string('os')       
         table.string('app_version')
+        table.date('created')
       })
       console.log('Daily Check App School table created!')
 

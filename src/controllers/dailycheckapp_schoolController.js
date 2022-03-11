@@ -1,6 +1,7 @@
 const { Pool } = require("pg");
 require("dotenv").config();
 const pool = new Pool();
+const { v4: uuidv4 } = require("uuid");
 
 module.exports.getAll = async (req, res) => {
   try {
@@ -22,28 +23,28 @@ module.exports.getAll = async (req, res) => {
 };
 
 module.exports.createDailycheckappSchool = async (req, res) => {
-
-  console.log(req.body)
+  const user_id = uuidv4();
 
   try {
-    const res = await pool.query(
-      `
-    INSERT INTO dailycheckapp_school(school_id, giga_id, country_id, os, ip_address, mac_address, created,app_version) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;`,
+    await pool.query(
+      `INSERT INTO dailycheckapp_school(user_id, giga_id_school, mac_address, os, app_version, created) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`,
       [
-        req.body.school_id,
+        user_id,
         req.body.giga_id,
-        req.body.country_id,
-        req.body.os,
-        req.body.ip_address,
         req.body.mac_address,
+        req.body.os,
+        req.body.app_version,
         req.body.created,
-        req.body.app_version
-      ]
+      ],
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res
+          .status(201)
+          .send({ success: true, timestamp: new Date(), data: { user_id } });
+      }
     );
-
-    //const company = new Company(req.body);
-    // await company.save();
-    res.send({success: true, timestamp: new Date(), data: [req.body]} ).status(200);
   } catch (e) {
     res.send(e).status(500);
   }

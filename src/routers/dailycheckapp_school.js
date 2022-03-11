@@ -13,47 +13,32 @@ const {
  *     DailyCheckAppSchool:
  *       type: object
  *       required:
- *         - school_id
- *         - giga_id
- *         - country_id
- *         - os
- *         - ip_address
+ *         - giga_id_school
  *         - mac_address
+ *         - os
  *         - app_version
  *       properties:
- *         school_id:
- *           type: string
- *           description: A school id provided by government
- *         giga_id:
+ *         giga_id_school:
  *           type: string
  *           description: A unique giga id
- *         country_id:
- *           type: int
- *           description: Country id
- *         os:
- *           type: string
- *           description: Operating system
- *         ip_address:
- *           type: string
- *           description: IP address 
  *         mac_address:
  *           type: string
  *           description: MAC address 
- *         created:
- *           type: date
- *           descripton: Created date
+ *         os:
+ *           type: string
+ *           description: Operating system
  *         app_version:
  *           type: string
  *           description: Daily check app version
+ *         created:
+ *           type: date
+ *           descripton: Created date
  *       example:
- *         school_id: 25pjn0242r
- *         giga_id: fd75dc75-1f13-4b66-b0ab-91ee8f464eac
- *         country_id: 146
- *         os: Windows
- *         ip_address: 127.0.0.1
+ *         giga_id_school: fd75dc75-1f13-4b66-b0ab-91ee8f464eac
  *         mac_address: 2C:54:91:88:C9:E3
- *         created: 2022-01-01
- *         app_version: 1.0.0      
+ *         os: Windows
+ *         app_version: 1.0.0  
+ *         created: 2022-01-01   
  */
 
 

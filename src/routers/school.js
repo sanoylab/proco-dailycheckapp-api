@@ -78,9 +78,9 @@ const {
  *         admin_1_name:
  *           type: string
  *           description: admin_4_name
- *         giga_id:
+ *         giga_id_school:
  *           type: string
- *           description: A unique giga_id
+ *           description: A unique giga_id_school
  *       example:
  *         id: 144
  *         code: BR
@@ -97,7 +97,7 @@ const {
  *         admin_3_name: 
  *         admin_4_name: 
  *         admin_1_name: 
- *         giga_id: 7b995921-6531-4eaf-a399-57491f5de640 *         
+ *         giga_id_school: 7b995921-6531-4eaf-a399-57491f5de640 *         
  */
 
 

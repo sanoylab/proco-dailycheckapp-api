@@ -49,3 +49,16 @@ module.exports.createDailycheckappSchool = async (req, res) => {
     res.send(e).status(500);
   }
 };
+
+
+module.exports.deleteDailyCheckappSchool = async (req, res) => {
+  const userId = req.params.user_id
+ 
+
+  pool.query('DELETE FROM dailycheckapp_school WHERE user_id = $1', [userId], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).send(`School deleted with user_id: "${userId}"`)
+  })
+}

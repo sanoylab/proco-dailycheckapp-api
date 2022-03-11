@@ -3,7 +3,8 @@ const router = express.Router();
 
 const {
     getAll,
-    createDailycheckappSchool
+    createDailycheckappSchool,
+    deleteDailyCheckappSchool
 } = require('../controllers/dailycheckapp_schoolController');
 
 /**
@@ -80,6 +81,27 @@ const {
  */
  router.post('/', createDailycheckappSchool);
 
+ /**
+ * @swagger
+ * /api/v1/dailycheckapp_schools/{user_id}:
+ *   delete:
+ *     summary: Remove the school by user_id
+ *     tags: [Daily Check App Schools]
+ *     parameters:
+ *       - in: path
+ *         name: user_id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The school user id
+ * 
+ *     responses:
+ *       200:
+ *         description: The school was deleted
+ *       404:
+ *         description: The school was not found
+ */
+router.delete('/:user_id', deleteDailyCheckappSchool);
 
 
 

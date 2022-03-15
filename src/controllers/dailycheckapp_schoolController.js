@@ -30,7 +30,7 @@ module.exports.createDailycheckappSchool = async (req, res) => {
       `INSERT INTO dailycheckapp_school(user_id, giga_id_school, mac_address, os, app_version, created) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`,
       [
         user_id,
-        req.body.giga_id,
+        req.body.giga_id_school,
         req.body.mac_address,
         req.body.os,
         req.body.app_version,

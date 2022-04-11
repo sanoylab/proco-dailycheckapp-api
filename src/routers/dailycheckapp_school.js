@@ -1,6 +1,6 @@
 const express =  require('express');
 const router = express.Router();
-
+const auth = require("../middleware/auth");
 const {
     getAll,
     createDailycheckappSchool,
@@ -59,7 +59,7 @@ const {
  *               items:
  *                 $ref: '#/components/schemas/DailyCheckAppSchool'
  */
- router.get('/', getAll);
+ router.get('/',auth, getAll);
 
 /**
  * @swagger
@@ -79,7 +79,7 @@ const {
  *       500:
  *         description: Some server error
  */
- router.post('/', createDailycheckappSchool);
+ router.post('/', auth, createDailycheckappSchool);
 
  /**
  * @swagger
@@ -101,7 +101,7 @@ const {
  *       404:
  *         description: The school was not found
  */
-router.delete('/:user_id', deleteDailyCheckappSchool);
+router.delete('/:user_id', auth, deleteDailyCheckappSchool);
 
 
 

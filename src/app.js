@@ -34,10 +34,24 @@ const options = {
       version: "1.0.1",
       servers: ["http://localhost:3000"],
     },
+    components: {
+      securitySchemes: {
+        Bearer: {
+          type: "http",
+          description: "Enter Authorization Bearer token ",
+          scheme: "bearer",         
+          bearerFormat: "JWT"
+        },
+      }
+    }
+    ,
+    security: [{
+      Bearer: []
+    }],
     servers: [
       {
-        url: "http://16.170.227.39"
-        //url: "http://localhost:3000"
+        //url: "http://16.170.227.39"
+        url: "http://localhost:3000"
       },
     ],
   },

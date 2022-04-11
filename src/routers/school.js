@@ -1,6 +1,6 @@
 const express =  require('express');
 const router = express.Router();
-
+const auth = require("../middleware/auth");
 const {
     getAll,
     getBySchoolId
@@ -117,7 +117,7 @@ const {
  *               items:
  *                 $ref: '#/components/schemas/School'
  */
- router.get('/', getAll);
+ router.get('/', auth, getAll);
 
 
 
@@ -145,7 +145,7 @@ const {
  *         description: The country was not found
  */
 
- router.get('/:school_id', getBySchoolId);
+ router.get('/:school_id', auth, getBySchoolId);
 
 
 

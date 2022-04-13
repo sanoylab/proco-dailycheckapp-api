@@ -52,13 +52,13 @@ const db = require('../db');
       await db.schema.dropTableIfExists('measurements')
       await db.schema.withSchema('public').createTable('measurements', (table) => {
         table.increments()
-        table.date('timestamp') 
-        table.string('browser_id')
+        table.date('Timestamp') 
+        table.string('BrowserID')
         table.string('school_id')
         table.string('giga_id_school')
-        table.double('download')
-        table.double('upload')
-        table.double('latency')     
+        table.double('Download')
+        table.double('Upload')
+        table.double('Latency')     
       })
       console.log('Measurements table created!')
 

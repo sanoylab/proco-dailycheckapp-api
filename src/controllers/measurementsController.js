@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 
 module.exports.getAll = async (req, res) => {
   try {
-    let query = `SELECT * FROM measurements ORDER BY timestamp desc;`;
+    let query = `SELECT "Timestamp", "BrowserID", "school_id", "giga_id_school", "Download", "Upload", "Latency"  FROM measurements ORDER BY "Timestamp" desc;`;
 
     let result = null;
     try {
@@ -27,15 +27,15 @@ module.exports.createMeasurements = async (req, res) => {
 
   try {
     await pool.query(
-      `INSERT INTO measurements(timestamp, browser_id, school_id, giga_id_school, download, upload, latency) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *;`,
+      `INSERT INTO measurements("Timestamp", "BrowserID", "school_id", "giga_id_school", "Download", "Upload", "Latency") VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *;`,
       [
-        req.body.timestamp,
-        req.body.browser_id,
+        req.body.Timestamp,
+        req.body.BrowserID,
         req.body.school_id,
         req.body.giga_id_school,
-        req.body.download,
-        req.body.upload,
-        req.body.latency,
+        req.body.Download,
+        req.body.Upload,
+        req.body.Latency,
       ],
       (error, results) => {
         if (error) {

@@ -14,18 +14,18 @@ const {
  *     Measurements:
  *       type: object
  *       required:
- *         - timestamp
- *         - browser_id
+ *         - Timestamp
+ *         - BrowserID
  *         - school_id
  *         - giga_id_school
- *         - download
- *         - upload
- *         - latency
+ *         - Download
+ *         - Upload
+ *         - Latency
  *       properties:
- *         timestamp:
+ *         Timestamp:
  *           type: date
- *           description: A timestamp for the data is created
- *         browser_id:
+ *           description: A Timestamp for the data is created
+ *         BrowserID:
  *           type: string
  *           description: Browser id (this field might be removed) 
  *         school_id:
@@ -34,23 +34,23 @@ const {
  *         giga_id_school:
  *           type: string
  *           description: A GIGA id
- *         download:
+ *         Download:
  *           type: double
- *           descripton: A download speed we get from the Daily Check App
- *         upload:
+ *           descripton: A Download speed we get from the Daily Check App
+ *         Upload:
  *           type: double
- *           descripton: A upload speed we get from the Daily Check App
- *         latency:
+ *           descripton: A Upload speed we get from the Daily Check App
+ *         Latency:
  *           type: double
- *           descripton: A latency information we get from the Daily Check App
+ *           descripton: A Latency information we get from the Daily Check App
  *       example:
- *         timestamp: 2022-01-01 
- *         browser_id: 452435678909657
+ *         Timestamp: 2022-01-01 
+ *         BrowserID: 452435678909657
  *         school_id: 99238348054
  *         giga_id_school: fd75dc75-1f13-4b66-b0ab-91ee8f464eac
- *         download: 10458.90934
- *         upload: 89.94
- *         latency: 5.5  
+ *         Download: 10458.90934
+ *         Upload: 89.94
+ *         Latency: 5.5  
  */
 
 /**
